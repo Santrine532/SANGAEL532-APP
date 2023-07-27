@@ -1,6 +1,11 @@
 import React from "react";
-
+import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
  function Signup() {
+  const navigate = useNavigate()
+    function navigateHome() {
+        navigate("/. ")
+      }
   return (
     <div className="flex flex-wrap items-center justify-center mb-6">
       <div className="w-full p-6 m-auto bg-blue rounded-md shadow-xl shadow-rose-600/40 ring ring-2 ring-blue-600 lg:max-w-xl">
@@ -36,8 +41,8 @@ import React from "react";
             Forget Password?
           </a>
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-            sign
+            <button onClick={navigateHome} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+            Signup
             </button>
           </div>
         </form>
@@ -49,7 +54,9 @@ import React from "react";
             Sign up
           </a>
         </p>
+        <Footer/>
       </div>
+      
     </div>
   );
 }
